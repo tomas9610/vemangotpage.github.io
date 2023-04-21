@@ -1,0 +1,1362 @@
+
+/*Acomodamos las dimensiones de las cajas*/
+*{
+    box-sizing: border-box;
+}
+
+/*Colores*/
+
+:root {
+
+    --cl-text: rgba(0, 0, 0, 62);
+    --cl-text-hover:rgba(0, 0, 0, 62);
+    --cl-primary :#F5ECEC; /*Fondo primer módulo y último*/
+    --cl-secundary : #E8EBF4;
+    --cl-third : #E8F4EB;
+
+    /*Intensidad y degradados accent 1*/
+    --cl-accent-1-1 : rgb(60, 102, 240); /*Botone primario 2 -- cerrar menu*/
+    --cl-accent-1-06 : rgb(106, 120, 245); /*Botone primario 2 -- cerrar menu*/
+    --cl-accent-1-05 : rgba(204, 221, 247, 0.527); /*Botone primario 2 -- cerrar menu*/
+
+    /* accent2*/
+    --cl-accent-2-15 : #12203e;
+    --cl-accent-2-1 : #4F619D;
+    --cl-accent-2-08 : #4f619de8;
+    --cl-accent-2-03 : #4f619d34;
+    --cl-accent-2-02 : #E8EBF0;
+    --cl-accent-2-01 : #eaf1eb49;  /*Fondo formulario*/
+
+    /*tercero*/
+    --cl-accent-3-1: #E5F2E8; /* Fondo módulo 3 index*/
+
+    /*Color claro y negro*/
+    --cl-light : #fff;
+    --cl-dark : #000;
+
+  }
+
+
+/*Fonts*/
+@font-face {
+    font-family: interBold;
+    src: url(../inter/static/Inter-Bold.ttf);
+  }
+
+  @font-face {
+    font-family: interBlack;
+    src: url(../inter/static/Inter-Black.ttf);
+  }
+
+  @font-face {
+    font-family: interRegular;
+    src: url(../inter/static/Inter-Regular.ttf);
+  }
+
+
+
+    /*Estos son los colores del sitio web*/
+    .cl__primary{
+      background-color: var(--cl-primary);
+    }
+
+    .cl__secundary{
+      background-color: var(--cl-secundary);
+    }
+
+    .cl__third{
+      background-color: var(--cl-third);
+    }
+
+
+
+  /*Formato globales*/
+
+  a{
+    text-decoration: none;
+    font-size: 18px;
+    font-family: interBold;
+  }
+
+  h1{
+    font-family: interBold;
+    font-size: 60px;
+  }
+
+  h2{
+    font-size: 35px;
+    font-family: interBold;
+  }
+
+  h3{
+    font-size: 20px;
+    font-family: interBold;
+  }
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+p{
+  font-family: interRegular;
+  font-size: 16px;
+  line-height: 170%;
+}
+
+a{
+  text-decoration: none;
+  font-family: interRegular;
+  font-size: 18px;
+}
+
+
+/*Contenedor principal y estructura en PC*/
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "header     header      header"
+      "contenido  contenido   contenido"
+      "footer     footer      footer";
+  }
+
+  .nav-main{
+    display: grid;
+    width: 94%;
+    left: 3%;
+    height: 80px;
+    grid-template-columns: 180px 1fr;
+    grid-template-areas: "logo menu menu"
+                         "contact contact contact";
+  }
+
+
+
+
+
+
+
+  /*Botones*/
+  .btn-primary{
+    background-color: var(--cl-accent-2-08);
+    color: var(--cl-light);
+  }
+
+  .btn-primary-shadow{
+    box-shadow: inset 0 0 0 2px var(--cl-accent-2-08); /*Borde interno*/
+    color: var(--cl-accent-2-08);
+  }
+
+  /*Logo*/
+  .logo{
+    position: relative;
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+  }
+
+
+  .link-logo{
+    font-family: interBold;
+    text-decoration: none;
+    color: var(--cl-text);
+    font-size: 20px;
+  }
+
+  /*Fin del logo*/
+
+
+
+  /*Estilo de la caja del nav color de estilo de fondo*/
+  .div-nav{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /*Pone la caja atrás del nav*/
+    display: grid;
+    grid-template-columns: 1fr .6fr;
+  }
+
+  .div-main{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /*Pone la caja atrás del nav*/
+    display: grid;
+    grid-template-columns: 1fr .6fr;
+  }
+
+
+
+
+
+  /*Caja de fondo sin un contenido, solo para dar estilo al fondo blanco en este caso en el nav*/
+  .div-accent{
+    background-color: var(--cl-primary);
+    transition: all .5s;
+  }
+
+  .div-accent-light{
+    background-color: var(--cl-light);
+    transition: all .5s;
+  }
+
+
+
+
+  /*División del menú con los CTA*/
+  .menu{
+    display: grid;
+    grid-area: menu;
+    height: 80px;
+    align-items: center;
+    grid-template-columns: 1fr .6fr;
+  }
+
+  .cta-container-nav{
+    display: grid;
+    justify-content: right;
+    position: relative;
+  }
+
+
+  .cta-container-nav div{
+    position: relative;
+    right: 35px;
+  }
+
+  .cta-container-nav .btn-tca{
+    margin-left: 15px;
+  }
+
+
+
+
+
+
+  /*Alineamiento de los enlaces del menú de manera horizontal*/
+  .menu-ul__li{
+    display: inline;
+    float: left;
+  }
+
+  .menu-ul__a--active{
+    color: var(--cl-accent-2-1);
+    border-bottom: 1px solid var(--cl-accent-2-1);
+  }
+
+  .menu-ul__a--inactive{
+    color: var(--cl-text);
+  }
+
+
+  .menu-ul__a{
+    margin-left: 60px;
+  }
+
+  .menu-ul .menu-ul__li:nth-child(1){
+    margin-left: -60px; /*Devolvemos el primero en posición original*/
+  }
+
+
+
+
+
+  /*Menú en móvil cuando está cerrado o abierto*/
+  .menu__close{
+    display: none;
+  }
+
+  .menu__open{
+    margin-right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .menu__visible{
+    display: none;
+  }
+
+
+
+
+
+/*Contenedor del boton extra del contacto en la parte superior*/
+  .container-contact{
+    grid-area: contact;
+    justify-content: right;
+    align-items: center;
+    display: none;
+  }
+
+  .container-contact-box{
+    width: 150px;
+  }
+
+
+  .link_text{
+    font-family: interRegular;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+
+
+
+
+
+
+
+  /*CTA o botones de llamado a la acción*/
+  .btn-tca{
+    display: inline-block;
+    padding: 12px 30px;
+  }
+
+  .menu-ul{
+    padding: 0; /*Restablecemos los valores*/
+    margin: 0;
+    list-style: none;
+  }
+
+  .menu-ul__logo{
+    display: none;
+  }
+
+  .header {
+    grid-area: header;
+    position: fixed;
+    width: 100%;
+    background-color: var(--cl-light);
+    z-index: 3;
+  }
+
+
+
+
+
+
+  /*Contenedores principales de las páginas o sus respectivas posiciones en GRID*/
+   .main {
+    grid-area: contenido;
+    position: relative;
+  }
+
+  .main2{
+    grid-area: contenido;
+    position: relative;
+    margin-top: 80px;
+    padding: 50px 50px;
+  }
+
+  .main2__container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .container-module1{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+
+
+  /*Introducción*/
+  .container-intro{
+    width: 90%;
+    position: relative;
+    display: grid;
+    grid-template-columns: .8fr 1fr;
+    justify-content: center;
+    align-content: center;
+  }
+
+
+
+
+  /*Contendor del H1 en el index**/
+  .container-intro__title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-intro__cta{
+    position: relative;
+    top: 20px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+  }
+
+  .container-intro__cta-button{
+    padding: 18px 40px;
+    background-color: var(--cl-accent-2-01);
+    box-shadow: inset 0 0 0 2px var(--cl-accent-2-08); /*Borde interno*/
+    color: var(--cl-dark);
+    font-family: interBold;
+  }
+
+
+
+
+
+
+  /*Caja contenedora del título y la descripción */
+  .container-intro__box{
+    width: 70%;
+    left: 30%;
+    position: relative;
+  }
+
+  .container-intro__img{
+    height: 800px;
+  }
+
+  .container-intro__img-image1{
+    width: 550px;
+    height: 450px;
+    left: 100px;
+    position: relative;
+  }
+
+  .container-intro__img-image2{
+    width: 250px;
+    height: 180px;
+    top: 50px;
+    position: relative;
+    left: 500px;
+  }
+
+  .container-intro__img-image3{
+    width: 250px;
+    height: 160px;
+    position: relative;
+    bottom: 100px;
+    left: 50px;
+  }
+
+  .container-intro__img-box{
+    width: 100%;
+    height: 100%;
+    left: 15px;
+    bottom: 15px;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .container-intro__img-img{
+    height: 100%;
+    width: 100%;
+    z-index: 40;
+  }
+
+  .container-intro__img-img2{
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+  /*Alineando el contenedor del módulo 2*/
+
+  .container-module2-cnt{
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+.container-module2-img{
+  display: grid;
+  justify-content: right;
+  align-content: center;
+  right: 50px;
+  position: relative;
+}
+
+.container-module2-txt{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.container-module2-txt-box{
+  width: 70%;
+}
+
+
+
+
+
+/*Tamaño a la caja de imágenes del módulo2*/
+.container-module2-img__box{
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+
+.container-module2-img__img{
+  height: 100%;
+}
+
+.container-module2-img__circle{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: var(--cl-accent-2-03);
+  border-radius: 1000px;
+  left: -30px;
+  top: 20px;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+/*Tamaño y alineado del módulo 3*/
+.container-module3{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+}
+
+.container-module3-cnt{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 70%;
+}
+
+.div-bg{
+  background-color: var( --cl-accent-3-1);
+  height: 50%;
+  width: 60%;
+  position: absolute;
+  z-index: -1;
+  top: 50px;
+}
+
+.container-module3-img{
+  position: relative;
+}
+
+
+
+
+
+
+/*Estilos de las cajas e imágenes del módulo 3*/
+.container-module3-img img{
+  height: 200px;
+}
+
+.container-module3-img-1{
+  position: relative;
+  left: 250px;
+  top: 50px;
+}
+
+.container-module3-img-2{
+  position: relative;
+  top: -10px;
+}
+
+.container-module3-img-3{
+  position: relative;
+  top: -80px;
+  left: 180px;
+}
+
+.container-module4-box{
+  position: relative;
+  width: 70%;
+}
+
+.container-module4-cnt{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 100%;
+  grid-gap: 30px;
+}
+
+
+
+
+/*Estilos de las cartas altura, ancho, color, centrado*/
+.card{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-box{
+  width: 80%;
+  left: 15%;
+  position: relative;
+  background-color: var(--cl-light);
+}
+
+.card-box-txt{
+  padding: 10px;
+}
+
+.card-box-img{
+  width: 100%;
+  height: 200px;
+}
+
+.card-box-img__img{
+  width: 100%;
+  height: 100%;
+}
+
+.bg-div2{
+  background-color: var(--cl-accent-2-02);
+  position: absolute;
+  height: 80%;
+  width: 100%;
+  bottom: 0%;
+  z-index: -1;
+}
+
+.btn-link{
+  height: 100px;
+  display: grid;
+  align-content: center;
+}
+
+.btn-link__a{
+  position: relative;
+  left: 100px;
+  color: var(--cl-dark);
+  width: 200px;
+}
+
+
+
+
+
+/*Alineando el contenedor del módulo 4 y 5*/
+
+.container-module4__h2{
+  position: relative;
+  left: 100px;
+  display: inline;
+  bottom: 30px;
+}
+
+.container-module5{
+  background-color: var(--cl-primary);
+  margin: 80px 0px;
+  padding: 60px 0px;
+}
+
+.container-module5-cnt{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.container-module5-box{
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.container-module5__h2{
+  position: relative;
+  left: 100px;
+  display: inline;
+  bottom: 40px;
+}
+
+
+/*Estilos de las cartas versión 2*/
+.card-2{
+  background-color: var(--cl-light);
+  width: 80%;
+  height: 460px;
+  position: relative;
+}
+
+.card-2-box{
+  width: 100%;
+  position: relative;
+}
+
+
+/*Estilo del contenedor de las imágnes de las cartas*/
+.card-2-img{
+  width: 60%;
+  height: 40px;
+  bottom: 10px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-2-box-img{
+  height: 250px;
+  width: 100%;
+}
+
+.card-2-box-img__img{
+  height: 100%;
+  width: 100%;
+}
+
+.card-2-img__img{
+  width: 100%;
+  height: 100%;
+}
+
+.card-2-box-title{
+  font-size: 20px;
+  font-family: interBold;
+  margin: 20px 10px;
+}
+
+.card-2-description{
+  margin: 5px 10px;
+}
+
+
+
+
+/*footer estilos básicos del footer*/
+.footer {
+  background-color: var(--cl-accent-2-15);
+  color: var(--cl-light);
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer__container1__box{
+  margin: 20px;
+}
+
+.footer__container2__box{
+  margin: 20px;
+}
+
+.footer__title{
+  font-size: 24px;
+  font-family: interBold;
+  margin-top: 50px;
+}
+
+.map{
+  width: 80%;
+}
+
+.map iframe {
+  width: 100%;
+}
+
+
+
+/*Sección sobre nosotros*/
+
+.main2__about{
+  height: 800px;
+  position: relative;
+}
+
+.main2__about__box__2{
+  position: absolute;
+  bottom: 0px;
+}
+
+.main2__box{
+  width: 80%;
+}
+
+.main2__img{
+  height: 380px;
+}
+
+.main2__img__img{
+  height: 100%;
+  width: 100%;
+}
+
+/*Galería de imágenes*/
+
+.column {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 10px;
+  width: 100%;
+  }
+
+.column img , .column iframe{
+  width: 100%;
+  height: 100%;
+}
+.column img:nth-child(2) {
+  grid-column: span 3;
+  grid-row: span 2;
+  }
+
+  /*Contacto y estilos del formulario*/
+
+  .main2__contact{
+    display: grid;
+    grid-template-columns: 1fr .6fr;
+  }
+
+  .main2__contact--box{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .contact__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cl-accent-2-01);
+  }
+
+  .contact_form--box{
+    width: 80%;
+  }
+
+  .contact__form label{
+    display: block;
+    margin: 5px;
+    position: relative;
+  }
+
+
+  /*Le da estilos al input y al textarea*/
+
+  .contact__form--invalid{
+    background-color: rgba(255, 0, 0, 0.109);
+    border: 1px solid red;
+  }
+
+  .form__span--err{
+    color: rgb(238, 24, 24);
+    opacity: 1;
+  }
+
+  .form__span--hidd{
+    opacity: 0;
+  }
+
+  .contact__form--valid{
+    background-color: rgba(0, 128, 0, 0.075);
+    border: 1px solid green;
+  }
+
+  .contact__form--basic{
+    background-color: var(--cl-accent-2-02);
+    border: 1px solid var(--cl-accent-2-03);
+  }
+
+  .contact__form--inp, .contact__form textarea{
+    margin: 5px;
+    position: relative;
+    outline: none;
+    border-radius: 2px;
+    width: 100%;
+  }
+
+  .contact__form--inp{
+    height: 40px;
+  }
+
+  .contact__form--textarea{
+    height: 120px;
+    resize: none;
+  }
+
+
+
+
+  /*Este es el boton de enviar el formulario*/
+  .form__submit{
+    cursor: pointer;
+    background-color: var(--cl-accent-2-1);
+    color: var(--cl-light);
+    transition: .3s;
+  }
+
+  .form__submit:hover{
+    background-color: var(--cl-accent-2-08);
+    transition: .3s;
+  }
+
+
+
+
+  /*Estilos básicos de la tabla*/
+  .table{
+    margin-top: 50px;
+    background-color: var(--cl-accent-2-01);
+  }
+
+  .table table{
+    width: 50%;
+  }
+
+  .table table th {
+    background-color: var(--cl-accent-2-1);
+    color: var(--cl-light);
+  }
+
+  .table table td {
+    background-color: var(--cl-accent-2-02);
+  }
+
+  .main2__contact--img{
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+
+/*Video css*/
+
+.container-module6{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cl-accent-2-03);
+}
+
+.container-module6-cnt{
+  width: 50%;
+  height: 480px;
+  margin: 20px;
+}
+
+.video__cnt{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color:  #fff;
+}
+
+.video__video{
+  height: 85%;
+  width: 100%;
+  position: relative;
+}
+
+
+.container-module-6__video {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  }
+
+  .video__controller{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .btn-video{
+    margin: 20px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+
+
+  /*Diseño responsivo*/
+
+  @media screen and (max-width: 1200px) {
+
+
+
+    /*Menú responsivo*/
+      /*Nav*/
+
+
+      /*Hace que el menú cambie su forma y ahora sea vertical*/
+    .menu{
+      display: block;
+      position: absolute;
+      height: 100vh;
+      width: 300px;
+      grid-template-columns: 1fr;
+      background-color: var(--cl-light);
+      left: 0px;
+      margin-top: 10px;
+    }
+
+
+    /*Abre o cierra el menú esto en modo web*/
+    .menu__active{
+      left: 0px;
+      transition: 1s;
+    }
+
+    .menu__inactive{
+      transition: 1s;
+      left: -300px;
+    }
+
+    .menu-ul__a{
+      margin-left: 0;
+      display: block;
+      padding: 15px 10px;
+      border-bottom: 1px solid #2c2b2b13;
+    }
+
+    .div-nav{
+      display: none;
+    }
+
+    .ul__logo{
+      margin: 0 10px;
+      display: inline;
+    }
+
+
+
+
+
+    /*Convierte los links del menú a vertical*/
+    .menu-ul__li{
+      display: block;
+      float: none;
+      margin: 5px 0;
+
+    }
+
+    .menu-ul .menu-ul__li:nth-child(1){
+      margin-left: 0;
+    }
+
+    .btn-tca{
+      display: inline-block;
+      padding: 12px 30px;
+      margin: 5px 0;
+      width: 100%;
+    }
+
+    .cta-container-nav div{
+      right: 0px;
+      padding: 0 10px;
+      bottom: 10px;
+    }
+
+
+    .cta-container-nav .btn-tca{
+      margin-left: 0px;
+    }
+
+    .cta-container-nav{
+      position: relative;
+      margin-top: 50px;
+    }
+
+    .menu-ul__logo{
+      display: inline;
+    }
+
+
+
+
+
+
+    /*Contenedor del boton de cerrar menú en móvil*/
+    .menu__close{
+      width: 100%;
+      display: block;
+      padding: 12px 30px;
+      text-align: right;
+      position: absolute;
+      bottom: 80px;
+    }
+
+    .menu__close--btn{
+      padding: 10px 30px;
+      border: 0;
+      border: 1px solid var(--cl-accent-1-06);
+      background-color: var(--cl-accent-1-05);
+      font-size: 14px;
+      color: var(--cl-accent-1-1);
+      cursor: pointer;
+    }
+
+    .menu__visible{
+      display: block;
+    }
+
+
+
+
+
+
+    /*Cambia la forma del nav en móvil*/
+    .nav-main{
+      display: grid;
+      width: 94%;
+      left: 3%;
+      height: 80px;
+      grid-template-columns: 180px 1fr;
+      grid-template-areas: "logo contact";
+    }
+
+    .container-contact{
+      grid-area: contact;
+      display: flex;
+      justify-content: right;
+      align-items: center;
+    }
+
+      /*Fin Nav*/
+
+
+
+
+
+
+      /*Index responsive*/
+
+
+      /*Cambiamos el orden de las columnas*/
+      .container-intro{
+        grid-template-columns: 1fr;
+      }
+
+
+      /*Cambia el tamaño de las imágenes*/
+      .container-intro__img-image1{
+        width: 100%;
+        height: 450px;
+        left: 0px;
+        position: relative;
+      }
+
+      .container-intro__img-image2{
+        width: 50%;
+        height: 180px;
+        top: 50px;
+        position: relative;
+        left: 20px;
+      }
+
+
+
+
+
+      /*Expande las columnas a toda la pantalla*/
+      .container-module2-cnt{
+        grid-template-columns: 1fr;
+      }
+
+      .container-module3-img-1{
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+
+      }
+
+      .container-module3-img-2{
+        position: relative;
+        top: 0;
+        width: 100%;
+      }
+
+      .container-module3-img-3{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+
+
+
+
+
+      /*Cambia el tamaño de las columnas*/
+      .container-module3-cnt{
+        grid-template-columns: 1fr;
+        width: 90%;
+      }
+
+      .container-module3, .container-module4{
+        padding: 50px 0;
+      }
+
+
+      .container-module4-cnt{
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+      }
+
+      .card-box{
+        width: 90%;
+        left: 5%;
+      }
+
+      .container-module4-box{
+        position: relative;
+        width: 100%;
+      }
+
+      .container-module4__h2{
+        left: 10px;
+      }
+
+      .container-module5-box{
+        width: 90%;
+        grid-template-columns: 1fr;
+      }
+
+      .card-2{
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .container-intro__box{
+        width: 100%;
+        left: 0%;
+      }
+
+      .container-intro__cta{
+        margin-top: 80px;
+      }
+
+      .container-module2-txt-box{
+        width: 90%;
+        left: 5%;
+        position: relative;
+      }
+
+      .container-module5__h2{
+        left: 10px;
+      }
+
+      /*Fin del index*/
+
+
+
+
+
+
+
+
+
+
+
+      /*Inicio sobre nosotros*/
+
+      .main2__container{
+        grid-template-columns: 1fr;
+      }
+
+      .main2__about{
+        height: auto;
+        position: relative;
+        margin: 25px 0;
+        padding: 0 25px;
+      }
+
+      .main2__about__box__2{
+        position: relative;
+        bottom: 0px;
+      }
+
+      .main2__box{
+        width: 100%;
+      }
+
+      .main2{
+        margin-top: 120px;
+      }
+
+      /*Fin sobre nosotros*/
+
+
+      .container-module6-cnt{
+        width: 100%;
+        height: 380px;
+      }
+
+
+  }
+
+
+
+
+
+
+
+
+/*Para teléfonos de 800px o menos*/
+
+@media screen and (max-width: 800px) {
+
+  .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .map{
+    width: 100%;
+  }
+
+
+  /*Contacto*/
+  .main2__contact{
+    grid-template-columns: 1fr;
+  }
+
+  .table table{
+    width: 100%;
+  }
+
+  .main2{
+    padding: 5px;
+  }
+
+  .table{
+    margin: 55px 0;
+  }
+
+  .contact_form--box{
+    width: 95%;
+  }
+  
+
+  /*Fin del contacto*/
+  .container-module6-cnt{
+    width: 100%;
+    height: 320px;
+    margin: 20px;
+  }
+
+  .video__video{
+    height: 80%;
+  }
+
+}
+

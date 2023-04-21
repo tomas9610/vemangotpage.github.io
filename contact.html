@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Veterinaria, perro y gatos, medicina para perros">
+    <meta name="description" content="Es una veterinaria para todo tipo de mascotas">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <script src="https://kit.fontawesome.com/34fd15bc9d.js" crossorigin="anonymous"></script>
+    <title>Vemangot | Bienvenido a la veterinaria</title>
+</head>
+
+<body>
+
+    <div class="container"> <!--Inicio del contedor-->
+
+    <header class="header">
+
+        <div class="div-nav">
+            <div id="divAccent" class="div-accent-light"></div>
+        </div>
+
+        <nav class="nav-main">
+
+            <!---Logo del sitio web-->
+            <div class="logo">
+                <!--Hamburguesa-->
+                <div id="menu_open" class="menu__open menu__visible">
+                    <i class="fa-sharp fa-solid fa-bars"></i>
+                </div>
+
+                <div class="container-logo">
+                    <a class="link-logo" href="index.html">Vemangot</a>
+                </div>
+            </div>
+
+            <!--Este es el menu de navegación claro que aún les falta las listas y todo eso pero ahí va.-->
+            <div id="menu" class="menu menu__inactive">
+
+                <div class="cta-container-menu">
+
+                    <ul class="menu-ul">
+                        <li class="menu-ul__logo ul__logo"><a class="link-logo" href="index.html">Vemangot</a></li>
+                        <li class="menu-ul__li"><a class="menu-ul__a--inactive menu-ul__a link_text" href="index.html">Inicio</a></li>
+                        <li class="menu-ul__li"><a class="menu-ul__a--inactive menu-ul__a link_text" href="about.html">Sobre nosotros</a></li>
+                        <li class="menu-ul__li"><a class="menu-ul__a--inactive menu-ul__a link_text" href="catalogue.html">Catálogo</a></li>
+                        <li class="menu-ul__li"><a class="menu-ul__a--inactive menu-ul__a link_text" href="gallery.html">Galería</a></li>
+                    </ul>
+                    
+                </div>
+    
+                <!--Botones-->
+                <div class="cta-container-nav">
+                    <div>
+                        <a class="btn-tca link_text btn-primary" href="contact.html">Contáctanos</a>
+                        <a class="btn-tca link_text btn-primary-shadow" target="_blank" href="https://www.rescatewildlife.org/es/inicio/">Rescate Wildlife</a>
+                    </div>
+                </div>
+
+
+                <div id="menu_close" class="menu__close menu__close--data">
+                    <button id="close_menu" class="menu__close--btn"> <i class="fa-solid fa-arrow-left"></i> Cerrar</button>
+                </div>
+
+            </div>
+
+
+            <!--Contáctenos móvil-->
+            <div class="container-contact">
+                <div class="container-contact-box">
+                    <a class="btn-tca link_text btn-primary" href="contact.html">Contáctanos</a>
+                </div>
+            </div>
+            <!--*Contáctenos móvil-->
+
+        </nav>
+
+    </header>
+
+    <main class="main2">
+
+        <!--Contenedor 1-->
+        <div class="main2__contact">
+
+            <div class="main2__contact--box">
+                <img class="main2__contact--img" src="assets/img/perro_gato.jpg" alt="Perro y gato juntos">
+            </div>
+
+            <div class="main2__contact--box contact__form">
+
+                <div class="contact_form--box">
+
+                    <h1>Contacto</h1>
+                    <p>
+                        Contactenos y con gusto le atenderemos
+                        su primera consulta es gratis. 
+                    </p>
+    
+                    <form action="" id="myForm">
+    
+                        <div>
+                            <label for="name">Nombre:</label>
+                            <input class="contact__form--inp contact__form--basic validation_inp" type="text" id="fname" name="name" placeholder="nombre">
+                            <span class="form__span--hidd">El nombre no puede contener numeros ni caracteres especiales</span>
+                        </div>
+                        <div>
+                            <label for="email">Correo:</label>
+                            <input class="contact__form--inp contact__form--basic validation_inp" type="email" id="email" name="email" placeholder="Correo">
+                            <span class="form__span--hidd">El correo debe de tener @ y dominio de correo válido</span>
+                        </div>
+                        <div>
+                            <label for="phone">Teléfono:</label>
+                            <input class="contact__form--inp contact__form--basic validation_inp" type="text" id="phone" name="phone" placeholder="Teléfono">
+                            <span class="form__span--hidd">No debe ser menor a 8 dígitos y solamente números</span>
+                        </div>
+    
+                        <div>
+                            <label for="textarea-rev">Mensaje:</label>
+                            <textarea class="contact__form--textarea validation_inp" id="textarea-rev" name="textarea-rev" rows="4" cols="50"></textarea>
+                        </div>
+    
+                        <input class="contact__form--inp contact__form--basic form__submit" type="submit" value="Enviar">
+    
+                    </form>
+
+                    <div id="msg-user">
+                        <p>El formulario se envío correctamente</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <!--* Contenedor 1-->
+
+        <div class="table"><!--Tablas-->
+
+            <table>
+                <tr>
+                  <th>Sede</th>
+                  <th>Contacto</th>
+                  <th>País</th>
+                  <th>Teléfono</th>
+                </tr>
+                <tr>
+                  <td>Moín Facio</td>
+                  <td>Esteven Garita</td>
+                  <td>Costa Rica</td>
+                  <td>(506) 8975321</td>
+                </tr>
+                <tr>
+                  <td>Zona oeste</td>
+                  <td>Fernando Esquivel</td>
+                  <td>Colombia</td>
+                  <td>(57) 8975321</td>
+                </tr>
+              </table>
+
+        </div><!--* Tablas-->
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container1"><!--Main container-->
+            <div class="footer__container1__box">
+                <div>
+                    <p class="footer__title">Contacto</p>
+                    <p>
+                        Estamos en Cartago frente el mercado
+                        local #3
+                    </p>
+                </div>
+    
+                <div>
+                    <p class="footer__title">Teléfono</p>
+                    <p>
+                        244645771
+                    </p>
+                </div>
+    
+                <div>
+                    <p class="footer__title">Email</p>
+                    <p>
+                        veterinaria_cr@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div><!--* Main container-->
+
+        <div class="footer__container2"><!--Mapa-->
+
+            <div class="footer__container2__box">
+                <div>
+                    <p class="footer__title">Ubicación</p>
+                </div>
+    
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d125719.0660026611!2d-84.48346792027638!3d10.03988155103485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x8fa045f71aafac8f%3A0x913c5b7da82feded!2sIna%20san%20ramon%20direccion!3m2!1d10.077850699999999!2d-84.47046689999999!5e0!3m2!1sen!2scr!4v1678551698514!5m2!1sen!2scr" width="600"
+                     height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+
+        </div><!--* Mapa-->
+    </footer>
+
+</div> <!--Fin del contenedor-->
+
+
+<!--Funcionalidades de javascript-->
+<script src="assets/js/js.js" async></script>
+<script src="assets/js/validation_form.js" async></script>
+</body>
+
+</html>
